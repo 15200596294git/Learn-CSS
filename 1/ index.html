@@ -73,20 +73,33 @@
     }
 
     .square6 {
+      width: 200px;
       height: 60px;
       outline: 5px solid deeppink;
-      
+      position: relative;
     }
 
-    /* .square6::after {
-      position: absolute;
-      left: 0;
+    .square6::after {
       content: '';
-      display: inline-block;
-      height: 60px;
-      width: 5px;
+      position: absolute;
+      top: -5px;
+      bottom: -5px;
+      right: -5px;
+      background: #ddd;
+      left: 0px;
+    }
 
-    } */
+    .square7 {
+      width: 205px;
+      height: 60px;
+      background: deeppink;
+      overflow-y: scroll;
+    }
+
+    .square7::-webkit-scrollbar {
+      width: 200px;
+      background: #ddd;
+    }
   </style>
 </head>
 
@@ -125,10 +138,12 @@
   <h3>实现方法6</h3>
   <div class="square6">
   </div>
+  <p>使用outline让每条边框都是红色，然后使用一个伪元素将三条边覆盖掉</p>
 
   <h3>实现方法7</h3>
-  <h3>实现方法8</h3>
-
+  <div class="square7"></div>
+  <p>这个着实有点吊，先是正常设置一个div，并且设置了滚动条</p>
+  <p>然后通过设置滚动条的样式来实现我们的样式</p>
 </body>
 
 </html>
