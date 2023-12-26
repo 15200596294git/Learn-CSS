@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICSS</title>
+  <style>
+    .border {
+      position: relative;
+      width: 180px;
+      height: 180px;
+    }
+
+    .demo1 {
+      background: #9c27b0;
+      border: 20px dashed #2196f3;
+    }
+
+    .demo1::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      background: #fff;
+    }
+
+    .demo2 {
+      background: #fff;
+      background-clip: padding-box;
+      border: 20px dashed #2196f3;
+      position: relative;
+    }
+    .demo2::after {
+      position: absolute;
+      content: '';
+      top: -20px;
+      bottom: -20px;
+      left: -20px;
+      right: -20px;
+      z-index: -1;
+      background: #9c27b0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="border demo1"></div>
+  <p>用border-dashed实现边框样式，然后使用伪元素遮住中间部分</p>
+
+
+  <div class="border demo2"></div>
+  <p>先遮住中间，然后使用为元素实现边框</p>
+</body>
+
+</html>
