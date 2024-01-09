@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS和文档</title>
+  <style>
+    /* 属性选择器 */
+    /* 全等于，class是什么这里就是什么 */
+    /* [class="type monkey"] {
+      color: green;
+    } */
+
+    /* class会有多个值，其中用空格分隔,~=只能为使用空格分隔的其中一个(单词或者单个字母) */
+    /* [class~="type"] {
+      color: green;
+    } */
+    /* 可以生效，因为class中有为a的值 */
+    /* [class~="a"] {
+      color: green;
+    } */
+
+    /* ^= 从class属性的前面开始匹配，比如有元素 class="a type monkey" ^=后面的值可以为 a,a ,a t,a ty 
+      只要前面的字符都匹配就行了
+    */
+    /* [class^="a t"] {
+      color: green;
+    } */
+    /* [class^="a "] {
+      color: green;
+    } */
+    /* [class^="a t"] {
+      color: green;
+    } */
+
+    /* 和上述相反，从后面的字符完全匹配就行了 */
+    /* [class$="y"] {
+      color: green;
+    } */
+    /* [class$="ey"] {
+      color: green;
+    } */
+
+    /* 结合^= $=,并且可以从中间开始匹配，只要某个元素的class值的子串包含，都可以生效 */
+    /* [class*="a"] {
+      color: green;
+    } */
+/* 
+    [class*="a "] {
+      color: green;
+    } */
+    /* [class*="y"] {
+      color: green;
+    } */
+    /* [class*="ey"] {
+      color: green;
+    } */
+    /* [class*="t"] {
+      color: green;
+    } */
+    /* [class*=" type"] {
+      color: green;
+    } */
+  </style>
+</head>
+<body>
+  <span>
+    <div class="a type monkey" alt>你好</div>
+    <p class="d">雷猴</p>
+  </span>
+</body>
+</html>
