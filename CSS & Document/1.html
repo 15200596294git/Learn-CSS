@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +46,7 @@
     /* [class*="a"] {
       color: green;
     } */
-/* 
+    /* 
     [class*="a "] {
       color: green;
     } */
@@ -71,9 +72,11 @@
     .link:visited {
       color: red;
     }
-    .link:hover  {
+
+    .link:hover {
       color: silver;
     }
+
     .link:active {
       color: yellow;
     }
@@ -86,6 +89,7 @@
     P:first-child {
       color: aqua;
     }
+
     /* 任意父元素下的第二个p标签 */
     p:nth-child(2) {
       color: red;
@@ -100,17 +104,42 @@
     .first-line {
       width: 200px;
     }
+
     .first-line::first-line {
-      
+
       font-size: 40px;
       color: brown;
     }
+
+    .font {
+      font: caption;
+    }
+
+    .indent {
+      width: 400px;
+      font-size: 40px;
+      /* text-indent: -2em;
+      margin-left: 80px; */
+      background-color: aqua;
+      text-align: justify;
+    }
   </style>
 </head>
+
 <body>
   <div>
     <div class="a type monkey en" alt>你好</div>
-    <p class="d">雷猴</p>
+    <p class="d">雷猴</p>.矩形_5 {
+  background-color: rgb(17, 48, 111);
+  opacity: 0.2;
+  position: absolute;
+  left: 109px;
+  top: 530px;
+  width: 294px;
+  height: 62px;
+  z-index: 19;
+}
+
     <p class="en">我不好</p>
     <p class="en-ga an">我不好</p>
     <p class="en- an">我不好</p>
@@ -129,6 +158,16 @@
     <p class="first-letter"> this is</p>
 
     <p class="first-line">this is this is this is this is this is this is this is this is this is </p>
+
+    <button class="font">我是按钮</button>
+
+    <div style="font:caption">这是我的标题</div>
+    <div style="font:menu">菜单中的字体</div>
+    <div style="font:message-box">对话框中的字体</div>
+    <div style="font:status-bar">状态栏中的字体</div>
+
+    <div class="indent">this is this is this is this is this is this is this is this is this is </div>
   </div>
 </body>
+
 </html>
