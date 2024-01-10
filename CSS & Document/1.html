@@ -61,12 +61,74 @@
     /* [class*=" type"] {
       color: green;
     } */
+
+    /* |= 比如class="en" 匹配class=en或者(不能有多个值) class以en-为开头(可以有多个值) */
+    /* 匹配 class="en" class="en-ga an" class="en- an" class="en-" */
+    [class|="en"] {
+      color: green;
+    }
+
+    .link:visited {
+      color: red;
+    }
+    .link:hover  {
+      color: silver;
+    }
+    .link:active {
+      color: yellow;
+    }
+
+    .input:focus {
+      background-color: silver;
+    }
+
+    /* 任意父元素下的第一个P标签 */
+    P:first-child {
+      color: aqua;
+    }
+    /* 任意父元素下的第二个p标签 */
+    p:nth-child(2) {
+      color: red;
+    }
+
+    /* first-letter 设置首字母的样式 */
+    .first-letter::first-letter {
+      color: red;
+    }
+
+    /* first-line 设置第一行 */
+    .first-line {
+      width: 200px;
+    }
+    .first-line::first-line {
+      
+      font-size: 40px;
+      color: brown;
+    }
   </style>
 </head>
 <body>
-  <span>
-    <div class="a type monkey" alt>你好</div>
+  <div>
+    <div class="a type monkey en" alt>你好</div>
     <p class="d">雷猴</p>
-  </span>
+    <p class="en">我不好</p>
+    <p class="en-ga an">我不好</p>
+    <p class="en- an">我不好</p>
+    <p class="en-">我不好</p>
+
+    <a class="link" href="./2.html">我是a链接</a>
+
+    <input class="input" type="text">
+
+    <div>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+    </div>
+
+    <p class="first-letter"> this is</p>
+
+    <p class="first-line">this is this is this is this is this is this is this is this is this is </p>
+  </div>
 </body>
 </html>
