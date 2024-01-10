@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>结构和层叠</title>
+  <style>
+    /* 选择器的特殊性
+      特殊性值表诉为4个部分 0, 0, 0, 0
+
+      内联样式为 1, 0, 0, 0
+      对于ID属性值,加 0, 1, 0, 0
+      对于类属性值、属性选择或伪类 0, 0, 1, 0
+      对于元素选择器和伪元素选择器 0, 0, 0, 1
+      结合符号和通配选择器没有贡献
+    */
+
+    .color {
+      color: #0ff;
+      height: 1cm;
+    }
+
+    .content {
+      width: 400px;
+      font-size: 48px;
+    }
+    .text {
+      display: inline-block;
+      text-indent: 2em;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <span class="text">颜色颜色颜色颜色颜色颜色颜色颜色颜色颜色颜色颜色</span>
+  </div>
+</body>
+</html>
