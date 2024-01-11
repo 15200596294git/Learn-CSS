@@ -123,23 +123,63 @@
       background-color: aqua;
       text-align: justify;
     }
+
+    /*
+      定义: 行高是文本行的基线之间的距离
+      行间距: 上一行的底线和下一行的顶线之间的距离
+      基线: 英文小写字母x的下底部
+      当一个元素从另一个块元素继承line-height值时
+      被继承的父元素使用的是em单位，那么继承的时候会先计算出为多少px然后给子级
+      但是如果父元素使用数值，比如1，那么继承的也就是1
+      接收的数值：16px 1(当前元素font-size的倍数) 100%(和数值类似) 
+      如果设置为数字或者关键字,被继承的直接是数字,否则被继承的是具体的数值(比如16px,100%)
+
+      font-size
+      font-size定义的是文本的大小,当设置line-height为1时,文本的高度和font-size的值是相等的
+    */
+    .line-height {
+      /* line-height: 1; */
+      /* line-height: normal; */
+      /* line-height: 10px; */
+    }
+    .line-height P{
+      margin: 0;
+    }
+    .line-height .text1 {
+      margin: 0;
+      line-height: 1;
+      display: inline-block;
+      /* line-height: 40px; */
+    }
+
+    /* vertical align
+    相对于元素的line-height值
+    vertical-align 不影响块级元素中内容的对齐
+    */
+    .vertical img {
+      width: 200px;
+      
+    }
+
+    .vertical2 {
+      font-size: 40px;
+      background-color: aqua;
+    }
+    .vertical2 img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+    .vertical2 span {
+     
+    }
   </style>
 </head>
 
 <body>
   <div>
     <div class="a type monkey en" alt>你好</div>
-    <p class="d">雷猴</p>.矩形_5 {
-  background-color: rgb(17, 48, 111);
-  opacity: 0.2;
-  position: absolute;
-  left: 109px;
-  top: 530px;
-  width: 294px;
-  height: 62px;
-  z-index: 19;
-}
-
+    <p class="d">雷猴</p>
     <p class="en">我不好</p>
     <p class="en-ga an">我不好</p>
     <p class="en- an">我不好</p>
@@ -167,6 +207,22 @@
     <div style="font:status-bar">状态栏中的字体</div>
 
     <div class="indent">this is this is this is this is this is this is this is this is this is </div>
+
+    <div class="line-height">
+      <p>我是文字P</p>
+      <span class="text1">s</span>
+      <span class="text2">我是文字</span>
+    </div>
+
+    <div class="vertical">
+      <img src="../imgs/1.png" alt="">
+      <span>x</span>
+      <span>我是杰哥我是杰哥我是杰哥</span>
+    </div>
+
+    <div class="vertical2">
+      <img src="../imgs//2.png" alt=""><span>我是文字我是文字我是文字</span>
+    </div>
   </div>
 </body>
 
