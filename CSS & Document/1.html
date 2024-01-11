@@ -136,6 +136,9 @@
 
       font-size
       font-size定义的是文本的大小,当设置line-height为1时,文本的高度和font-size的值是相等的
+
+      给内联盒子设置line-height时，内联盒子的高度不会变化(但是内联盒子的内容区域会变成和line-height一样，也可以说行框盒子的高度会和line-height一样)
+      包含盒子 containing box
     */
     .line-height {
       /* line-height: 1; */
@@ -172,6 +175,19 @@
     }
     .vertical2 span {
      
+    }
+
+    .ghost {
+
+    }
+
+    .cont {
+      line-height: 200px;
+    }
+    .cont p {
+      display: inline-block;
+      line-height: normal;
+      vertical-align: middle;
     }
   </style>
 </head>
@@ -221,7 +237,16 @@
     </div>
 
     <div class="vertical2">
-      <img src="../imgs//2.png" alt=""><span>我是文字我是文字我是文字</span>
+      <img src="../imgs/2.png" alt=""><span>我是文字我是文字我是文字</span><span>我也是文字</span>
+    </div>
+
+    <div class="cont">
+      <p>
+        测试数据...测试数据...测试数据...测试数据...测试数据...
+        测试数据...测试数据...测试数据...测试数据...测试数据...
+        测试数据...测试数据...测试数据...测试数据...测试数据...
+        测试数据...测试数据...测试数据...测试数据...
+      </p>
     </div>
   </div>
 </body>
