@@ -145,9 +145,11 @@
       /* line-height: normal; */
       /* line-height: 10px; */
     }
-    .line-height P{
+
+    .line-height P {
       margin: 0;
     }
+
     .line-height .text1 {
       margin: 0;
       line-height: 1;
@@ -161,29 +163,28 @@
     */
     .vertical img {
       width: 200px;
-      
+
     }
 
     .vertical2 {
       font-size: 40px;
       background-color: aqua;
     }
+
     .vertical2 img {
       width: 20px;
       height: 20px;
       vertical-align: middle;
     }
-    .vertical2 span {
-     
-    }
 
-    .ghost {
+    .vertical2 span {}
 
-    }
+    .ghost {}
 
     .cont {
       line-height: 200px;
     }
+
     .cont p {
       display: inline-block;
       line-height: normal;
@@ -194,6 +195,72 @@
       text-align: center;
       font-size: 40px;
       text-shadow: 0px 0px 7px #ab5161;
+    }
+
+    /* 
+    包含块就是一个元素的 '布局上下文'
+    包含块是最近的块级祖先、表单元格或行内块祖先框的内容边界
+    框模型(盒模型): 外边距、边框、内边距、内容区域(content area)
+    width属性设置的是内容区域的值(而不包括边框和内边距)
+    正常流中块级元素框的水平部分总和等于父元素的width
+    width、margin-left、margin-right可以设置为auto
+    当width为auto时,会优先把剩余未分配的宽度分配给width属性,也就是说(两个auto一个具体值的情况)如果只设置了一个margin的值,那么剩余的宽度会分配给width属性,另外一个margin会为0
+    如果margin-left和margin-right都为auto,那么会平分剩余的宽度,使元素水平居中显示
+    当width:auto时, 左边和右边的负margin会使元素增大
+    当width为具体值时,左负marign会使元素往左边移动
+    */
+
+    .l-contain {
+      width: 400px;
+      height: 400px;
+      background-color: aquamarine;
+    }
+
+    .l-contain__child {
+      width: auto;
+      height: 100%;
+      margin-left: auto;
+      margin-right: 100px;
+      background: #ab5161;
+    }
+
+    /* 设置一个元素的宽200 高200 内边距20 border 10 */
+    .l-width {
+      width: 200px;
+      /* height: 200px; */
+      background-color: blueviolet;
+
+    }
+
+    .l-width__child {
+      height: 200px;
+      /* height: 100%; */
+      padding: 20px;
+      /* border: 10px solid; */
+    }
+
+    .l-neg {
+      width: 400px;
+      height: 400px;
+      border: 3px solid;
+      background-color: darkolivegreen;
+    }
+
+    .l-neg__child {
+      width: auto;
+      line-height: 40px;
+      margin-left: 10px;
+      margin-right: -40px;
+      background-color: orangered;
+    }
+
+    /* 垂直格式化
+      正常流中margin-top或者margin-bottom设置为auto,自动计算为0
+    */
+    .format {
+      width: 200px;
+      /* height:10px; */
+      height: auto;
     }
   </style>
 </head>
@@ -257,6 +324,20 @@
 
     <div class="shadow">
       测试数据
+    </div>
+
+    <div class="l-contain">
+      <div class="l-contain__child"></div>
+    </div>
+    <div class="l-width">
+      <div class="l-width__child"></div>
+    </div>
+    <div class="l-neg">
+      <div class="l-neg__child">我是文字</div>
+    </div>
+
+    <div class="format">
+      <p class=""> 测试数据...测试数据...测试数据...测试数据...测试数据... 测试数据...测试数据...测试数据...测试数据...测试数据...</p>
     </div>
   </div>
 </body>
