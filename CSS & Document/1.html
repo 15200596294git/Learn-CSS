@@ -256,12 +256,32 @@
 
     /* 垂直格式化
       正常流中margin-top或者margin-bottom设置为auto,自动计算为0
+      块级正常流元素设置为auto,显示高度足以包含内联内容的行盒子(包括margin)
+      块级正常流元素设置为auto，如果只有块级子元素，那么auto高度不会包括margin，但是如果此时块级元素有padding或者border，那么auto高度包括子元素的margin
     */
     .format {
-      width: 200px;
-      /* height:10px; */
       height: auto;
+      width: 200px;
+      background-color: burlywood;
     }
+    .format__child {
+      /* height: auto;
+      margin: 25% 0; */
+      /* padding: 25% 0; */
+      /* border: 10px solid; */
+      height: 200px;
+      margin-bottom: -20px;
+      background-color: #ab5161;
+    }
+    .format__child2 {
+      margin-top: 10px;
+      height: 200px;
+      background-color: aquamarine;
+    }
+    /* .format span {
+      display: inline-block;
+      margin: 20px 0;
+    } */
   </style>
 </head>
 
@@ -337,8 +357,13 @@
     </div>
 
     <div class="format">
-      <p class=""> 测试数据...测试数据...测试数据...测试数据...测试数据... 测试数据...测试数据...测试数据...测试数据...测试数据...</p>
+      <!-- <p class=""> 测试数据...测试数据...测试数据...测试数据...测试数据... 测试数据...测试数据...测试数据...测试数据...测试数据...</p> -->
+      <!-- <div class="format__child">22</div>
+      <div class="format__child2"></div> -->
+      <span>我是测试数据</span>
     </div>
+
+
   </div>
 </body>
 

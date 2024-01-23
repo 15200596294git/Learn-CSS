@@ -3,9 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我是b页面</title>
+  <title>行内非替换元素</title>
+  <style>
+    .l-inline {
+      width: 400px;
+      /* line-height: 40px; */
+      line-height: 28px;
+    }
+    .l-inline span {
+      /* border: 1px solid #000; */
+    }
+    /* 
+    em框: 字符框 font-size确定了各个em框的高度
+    内容区: 各字符的em框串在一起构成的框
+    半间距: 行间距的一半
+    行内框: 对于非替换元素，元素行内框的高度刚好等于line-height的值。 替换元素行内框的高度等于内容去的高度，因此行间距不应用到替换元素
+    行框: 该行出现的行内框的最高点和最低点的最小框
+
+    非替换元素的内边距、边框和外边距对行内元素或者其他生成的框没有垂直效果
+
+    font-size可以理解为设置文本的高度
+    */
+
+    .l-margin {
+      width: 200px;
+      
+    }
+  </style>
 </head>
 <body>
-  b页面
+  <p style="font-size: 12px;line-height:12px">
+    This is text, <em>of which is emphasized</em>,plus other text<br>
+    which is <strong style="font-size: 24px;">strongly emphasized</strong>and<span style="vertical-align: top;">tall</span>
+    and which is<br>
+    <img style="width: 50px;height: 50px;" src="../imgs/1.png" alt="">
+    larger than the surrounding text.
+  </p>
+
+  <div>
+    <!-- <img style="width: 50px;height: 50px;" src="../imgs/1.png" alt=""> -->
+    xxx
+    <p style="display: inline-block;">xxxxxxxxxxxxxxx</p> This is text This is text This is text This is text This is text
+    This is text This is text This is text This is text This is text
+
+    <div class="l-margin"> 
+      <p>我是p元素</p>
+    </div>
+  </div>
 </body>
 </html>
