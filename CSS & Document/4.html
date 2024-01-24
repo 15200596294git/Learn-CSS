@@ -6,13 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>颜色和背景</title>
   <style>
+    body {
+      margin: 0;
+      height: 2000px;
+    }
+    /* 
+    设置background-attachment: fixed; 背景图的位置是相对于视口
+    */
     .bg {
       /* background-color: cadetblue; */
+      width: 500px;
+      height: 1000px;
+      /* height: 2000px; */
       background-image: url(../imgs/1.png);
-      background-size: 10px 10px;
-      background-repeat: repeat-x;
-      padding: 10px 0;
-      border: 10px solid;
+      /* background-size: 400px 400px; */
+      background-repeat: no-repeat;
+      /* padding: 10px 0; */
+      /* border: 10px solid; */
+      /* background-position: top; */
+      background-attachment: fixed;
     }
 
     .l-progress {
@@ -31,26 +43,37 @@
 
 <body>
   <div class="bg">
+    <!-- wwowo
     wwowo
+    wwowo
+    wwowo -->
   </div>
-  <div class="l-progress" id="progress">
+  <!-- <div class="l-progress" id="progress">
     <div class="c-progress ani"></div>
-  </div>
+  </div> -->
   <script>
-    // [ [<percentarge> | <length> | left | center | right] [<percentage> | <length> | top | center | bottom]? ] || [ [] || [] ] | inherit
-    const p = document.getElementById('progress')
-    // p.classList.add()
-    let init = 0
-    function fn() {
-      if (init >= 360) {
-        return
+    // 
+    // 传入时间，按间隔时间累加 
+    function countdown(ms, delay, cb, already = 0) {
+      // debugger
+      if (already >= ms) {
+        return true
       }
-      setTimeout(() => {
-        p.style.setProperty('--rotate-deg', (init += (360 / 500)) + 'deg')
-        fn()
-      }, 10);
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          already += delay
+          cb()
+          // debugger
+          resolve(countdown(ms, delay, cb, already))
+        }, delay);
+      })
     }
-    fn()
+
+    // [ [<percentarge> | <length> | left | center | right] [<percentage> | <length> | top | center | bottom]? ] || [ [] || [] ] | inherit
+    // const p = document.getElementById('progress')
+    // let init = 0
+    // countdown(5000, 10, ()=> p.style.setProperty('--rotate-deg', (init += (360 / 500)) + 'deg'))
+    
   </script>
 </body>
 
