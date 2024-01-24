@@ -14,6 +14,18 @@
       padding: 10px 0;
       border: 10px solid;
     }
+
+    .l-progress {
+      --rotate-deg: 0deg;
+    }
+
+    .c-progress {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      background: conic-gradient(#000 0, #000 var(--rotate-deg), #eeeeee var(--rotate-deg, 0deg), #eeeeee 360deg);
+      mask: radial-gradient(transparent, transparent 44px, #000 44.5px, #000 100%);
+    }
   </style>
 </head>
 
@@ -21,9 +33,24 @@
   <div class="bg">
     wwowo
   </div>
-
+  <div class="l-progress" id="progress">
+    <div class="c-progress ani"></div>
+  </div>
   <script>
     // [ [<percentarge> | <length> | left | center | right] [<percentage> | <length> | top | center | bottom]? ] || [ [] || [] ] | inherit
+    const p = document.getElementById('progress')
+    // p.classList.add()
+    let init = 0
+    function fn() {
+      if (init >= 360) {
+        return
+      }
+      setTimeout(() => {
+        p.style.setProperty('--rotate-deg', (init += (360 / 500)) + 'deg')
+        fn()
+      }, 10);
+    }
+    fn()
   </script>
 </body>
 
