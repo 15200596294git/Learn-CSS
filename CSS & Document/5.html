@@ -5,52 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>浮动和定位</title>
   <style>
-    .img {
-      float: left;
-      width: 50px;
-      height: 50px;
-    }
-    .fl {
-      float: left;
-    }
-    .fr {
-      float: right
+    .part {
+      margin: 20px;
     }
 
-    .p {
-      width: 500px;
+    .abs1 {
+      width: 400px;
+      height: 400px;
+      background: gold;
+      position: relative;
+      padding: 20px;
+      border: 20px solid ;
+      margin: 20px;
     }
-    .img1 {
-      width: 300px;
-      height: 300px;
-    }
-    .img2 {
-      width: 300px;
-      height: 300px;
-    }
-
-    .con {
-      width: 500px;
-    }
-    .p1 {
-      width: 300px;
-    }
-    .p2 {
-      width: 300px;
-    }
-    .p3 {
-      width: 200px;
+    .child1 {
+      background: cadetblue;
+      position: absolute;
+      left: 50%;
+      right: 0;
+      top: 50%;
+      bottom: 0;
+      /* clip: rect(0, 20px, 20px, 0); */
     }
   </style>
 </head>
 <body>
   <div>
     
-    <div class="con">
-      <p class="p1 fl">段落1</p>
-      <p class="p2 fl">段落2</p>
-      <p class="p3 fl">段落3</p>
+    <!-- 
+      子元素使用absolute定位时
+      父元素使用了relative，子元素的定位会包括父元素的padding在内
+    -->
+    <div class="part">
+      <div class="abs1">
+        <div class="child1"></div>
+      </div>
     </div>
+
     
   </div>
 </body>
