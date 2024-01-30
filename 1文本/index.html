@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文本</title>
+  <style>
+    .block {
+      margin: 20px 0;
+    }
+
+    .tips {
+      font-style: italic;
+      color: #756565;
+    }
+
+
+    .t-indent {
+      width: 200px;
+      text-indent: 2em;
+    }
+
+    .t-indent2 {
+      --font-size: 20px;
+      font-size: var(--font-size);
+      width: calc(var(--font-size) * 10);
+      background: cadetblue;
+      text-indent: 20%;
+    }
+
+    .t-indent3 {
+      background: greenyellow;
+      text-indent: -2em;
+    }
+
+    .t-indent4 {
+      text-indent: 2em;
+    }
+
+    .t-indent5 {
+      width: 200px;
+      text-indent: -2em;
+      padding-left: 2em;
+    }
+
+    .t-indent6 {
+      --font-size: 20px;
+      width: calc(var(--font-size) * 20);
+      background: coral;
+    }
+    .t-indent6 p{
+      text-indent: 5%;
+    }
+
+    .t-align {
+      width: 400px;
+      text-align: left;
+      background: gold;
+    }
+    .t-align2 {
+      width: 400px;
+      text-align: center;
+      background: gold;
+    }
+    .t-align2 span {
+
+    }
+
+    .t-align3 {
+      width: 400px;
+      text-align: right;
+      background: gold;
+    }
+    .t-align4 {
+      background: gold;
+      width: 400px;
+      text-align: justify;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="block">
+    <h2>text-indent</h2>
+    <p>值: 长度值 | 百分比值</p>
+    <p>初始值: 0</p>
+    <p>应用于: 块级元素</p>
+    <p>继承性: 有</p>
+    <p>百分数: 相对于包含块的宽度 (content area)</p>
+
+    <h3>text-indent 首行空两格</h3>
+    <p class="t-indent">这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字</p>
+    <h3>text-indent 百分比</h3>
+    <p class="tips">设置变量--font-size,text-indent的值设置为20%(相对于包含块的宽度)，20%表示永远在首行缩进包含块的20%，然后设置包含块的宽度也就是width为 --font-size *
+      10</p>
+    <p class="t-indent2">这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字</p>
+    <p class="tips">p是块级元素，没有设置宽度，默认铺满，但是p的父元素div为块级元素并且设置了宽度，此时div设置了width为400px，那么p元素的width也就只为400px</p>
+    <div class="t-indent6">
+      <p >这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字</p>
+    </div>
+
+    <h3>text-indent 负值</h3>
+    <p class="t-indent3">这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字</p>
+    <p class="tips">使用text-indent负值缩进首行文本，再只用padding-left将首行文本归回原位</p>
+    <p class="tips">这样就变成了除了首行，其他行全部缩进</p>
+    <p class="t- ">
+      这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字</p>
+
+    <h3>text-indent 继承性</h3>
+    <p class="tips">子级会继承text-indent,但是span不会生效，因为span不是块级元素</p>
+    <div class="t-indent4">
+      这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字
+      <p>这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字</p>
+      <span>我是span元素，不是块级元素，不会应用text-indent</span>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>text-align</h2>
+    <p>left | center | right | justify</p>
+    <p>初始值: 中文一般为left，阿拉伯文为right</p>
+    <p>应用于: 块级元素</p>
+    <p>继承性: 有</p>
+    <h3>text-align left</h3>
+    <p class="t-align">我是文字我是文字我是文字我是文字我是文字</p>
+
+    <h3>text-align center</h3>
+    <p class="t-align2">我是文字我是文字我是文字我是文字我是文字</p>
+    <p class="t-align2">
+      <span>我是文字我是文字我是文字我是文字</span>
+      <!-- 我是文字我是文字我是文字我是文字我是文字 -->
+    </p>
+
+    <h3>text-align right</h3>
+    <p class="t-align3">我是文字我是文字我是文字我是文字我是文字</p>
+    
+    <h3>text-align justify</h3>
+    <p class="tips">除了最后一行不会两端对齐，其他都会。如果只有一行就不会有两端对齐的效果</p>
+    <p class="t-align4">
+      thisgjoajojsgpnmgoshgs
+      gjogjwojwotjogojgw
+      gowhjtiowjktg  jiogjwo 
+      gjiowjgow  jmgowjgwit 
+      thji  jit oppj jkpwt j ow w jiogjwo
+      jowt ij  jiow jiogsj tjwc jjio  jotgw
+    </p>
+  </div>
+
+  <div class="block">
+    <h2>line-height</h2>
+    <p>值: <长度> | <百分比> | <数值> | normal </p>
+    <p>初始值: normal</p>
+    <p>应用于: 所有元素 </p>
+    <p>继承性: 有</p>
+    <p>百分数: 相对于元素的字体大小(font-size)</p>
+    <p>计算值: 长度和百分比数值是绝对值；否则根据指定值（我理解计算值就是被继承的值）</p>
+
+  </div>
+</body>
+
+</html>
