@@ -49,7 +49,8 @@
       width: calc(var(--font-size) * 20);
       background: coral;
     }
-    .t-indent6 p{
+
+    .t-indent6 p {
       text-indent: 5%;
     }
 
@@ -58,25 +59,108 @@
       text-align: left;
       background: gold;
     }
+
     .t-align2 {
       width: 400px;
       text-align: center;
       background: gold;
     }
-    .t-align2 span {
 
-    }
+    .t-align2 span {}
 
     .t-align3 {
       width: 400px;
       text-align: right;
       background: gold;
     }
+
     .t-align4 {
       background: gold;
       width: 400px;
       text-align: justify;
     }
+
+    .t-line {
+      font-size: 20px;
+      /* line-height: 5; */
+      line-height: 500%;
+    }
+
+    .t-line2 {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .t-line2-p1 {
+      width: 200px;
+      font-size: 30px;
+    }
+
+    /* .t-line2 .p2 {} */
+
+    .t-vertical {
+      background: gray;
+      font-size: 20px;
+    }
+
+    .t-vertical .sp1 {
+      background-color: red;
+      font-size: 10px;
+
+    }
+
+    .t-vertical .sp2 {
+      background: gold;
+      font-size: 10px;
+    }
+
+    .t-vertical .img1 {
+      width: 20px;
+      height: 10px;
+      background: gold;
+    }
+
+    .t-vertical2 {
+      background-color: aqua;
+    }
+
+    .t-vertical2 .img1 {
+      width: 200px;
+      height: 200px;
+    }
+
+    .t-vertical3 {
+      margin: 20px 0;
+      background-color: aqua;
+    }
+
+    .t-vertical3 .img1 {
+      width: 200px;
+      height: 200px;
+      vertical-align: bottom;
+    }
+
+    .t-vertical4 {
+      background-color: aqua;
+      line-height: 10;
+    }
+    .t-vertical4 .sp1{
+      margin: 0 20px;
+      background-color: gold;
+      vertical-align: bottom;
+    }
+    .t-vertical4 .sp2{
+      vertical-align: text-bottom;
+      background-color: gold;
+    }
+    .t-vertical4 .img1 {
+      width: 20px;
+      height: 20px;
+      vertical-align: text-bottom;
+    }
+
+   
+    
   </style>
 </head>
 
@@ -97,7 +181,7 @@
     <p class="t-indent2">这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字</p>
     <p class="tips">p是块级元素，没有设置宽度，默认铺满，但是p的父元素div为块级元素并且设置了宽度，此时div设置了width为400px，那么p元素的width也就只为400px</p>
     <div class="t-indent6">
-      <p >这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字</p>
+      <p>这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字这是一行文字</p>
     </div>
 
     <h3>text-indent 负值</h3>
@@ -134,16 +218,16 @@
 
     <h3>text-align right</h3>
     <p class="t-align3">我是文字我是文字我是文字我是文字我是文字</p>
-    
+
     <h3>text-align justify</h3>
     <p class="tips">除了最后一行不会两端对齐，其他都会。如果只有一行就不会有两端对齐的效果</p>
     <p class="t-align4">
       thisgjoajojsgpnmgoshgs
       gjogjwojwotjogojgw
-      gowhjtiowjktg  jiogjwo 
-      gjiowjgow  jmgowjgwit 
-      thji  jit oppj jkpwt j ow w jiogjwo
-      jowt ij  jiow jiogsj tjwc jjio  jotgw
+      gowhjtiowjktg jiogjwo
+      gjiowjgow jmgowjgwit
+      thji jit oppj jkpwt j ow w jiogjwo
+      jowt ij jiow jiogsj tjwc jjio jotgw
     </p>
   </div>
 
@@ -155,7 +239,108 @@
     <p>继承性: 有</p>
     <p>百分数: 相对于元素的字体大小(font-size)</p>
     <p>计算值: 长度和百分比数值是绝对值；否则根据指定值（我理解计算值就是被继承的值）</p>
+    <p class="tips">line-height值和font-size值之差就是行间距</p>
 
+    <h3>line-height 百分比</h3>
+    <p class="t-line">我是文字我是文字我是文字</p>
+
+    <h3>line-height 继承</h3>
+    <p class="tips">如果line-height的值为一个数值，那么被继承的是一个数值</p>
+    <p class="tips">比如line-height设置成了1.2,那就是当前元素font-size的1.2倍</p>
+    <p class="tips">这样被继承的也就是1.2，然后计算的值就是被继承元素的font-size的1.2倍</p>
+    <div class="t-line2">
+      我是文字
+      <p class="t-line2-p1">
+        我是文字我是文字我是文字我是文字我是文字我是文字
+        我是文字我是文字我是文字我是文字我是文字我是文字
+        我是文字我是文字我是文字我是文字我是文字我是文字
+        我是文字我是文字我是文字我是文字我是文字我是文字
+      </p>
+      <p class="t-line2-p2"></p>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>vertical-align</h2>
+    <p>值: baseline | sub | super | top | text-top | middle | bottom | text-bottom | <长度> | <百分比>
+    </p>
+    <p>初始值: baseline</p>
+    <p>应用于: 行内元素和表单元素</p>
+    <p>继承性: 无</p>
+    <p>百分数: 相对于元素的line-height</p>
+
+    <p class="tips">vertical-align: baseline是默认值</p>
+    <p class="tips">要求一个元素的基线与父元素的基线对齐</p>
+    <h3>baseline</h3>
+    <div class="t-vertical">
+      xxxxx
+      <!-- <span class="sp1">x</span>  -->
+      <!-- img不设置src时可能不会当成一个替换元素 -->
+      <!-- 那么它就可能不会将底部和父元素的基线对齐 -->
+      <img class="img1" src="../imgs/1.png" alt="">
+      <span class="sp2">xxx</span>
+    </div>
+
+    <h3>vertical-align: bottom; 行内元素的底端与行框的底端对齐</h3>
+    <p class="tips">行框根据一行内最高的行内元素的顶部和最低的行内元素的底部决定</p>
+    <h4>底端对齐解决替换元素基线对齐出现的高度多出一丢丢的问题</h4>
+    <p>img替换元素默认基线对齐</p>
+    <div class="t-vertical2">
+      <img src="../imgs/1.png" class="img1" alt="">
+    </div>
+
+    <p>img替换元素 底端对齐</p>
+    <div class="t-vertical3">
+      <img src="../imgs/1.png" class="img1" alt="">
+    </div>
+    <div class="tips">
+      <p>声明一个div元素，div元素中有一个img替换元素，此时生成一个行框盒子，一个行内盒子</p>
+      <p>行框盒子是由行内盒子的高度决定的，此时只有一个img元素，由img决定行框高度</p>
+      <p>img高度为200px，但是默认的对齐方式会让img相对于父元素的基线对齐</p>
+      <p>可以理解为每一个行框盒子有顶线中线基线和底线，顶线和底线决定了这个行框的高度</p>
+      <p>此时img高度为200px，并且基线对齐，那么img其实是占据了顶线到基线的高度</p>
+      <p>行框还有一段高度，是基线到底线的高度，所以就会高出那么一点点</p>
+      <p>此时把img的对齐方式设置为vertical-align: bottom</p>
+      <p>就是把img元素的底部(行内框的底部)和行框的底部对齐</p>
+      <p>就正好为整个行框的高度</p>
+    </div>
+
+    <h3>bottom和text-bottom</h3>
+    <div class="tips">
+      <p>bottom 是将行内框的底端和行框的底端对齐</p>
+      <p>text-bottom 是将行内框的底端和和父元素的一个行内框的底端对齐，这是一个假想行内框，由父元素的font-size决定</p>
+    </div>
+    <div class="t-vertical4">
+      x
+      <span class="sp1">x</span>
+      <span class="sp2">x</span>
+      <img src="../imgs/1.png" class="img1" alt="">
+    </div>
+    <div class="tips">
+      <p>第一个x是父元素的x</p>
+      <p>第二个x是bottom的x，它的底部一直和父元素的x的底部对齐(行内框的底部和行框的底部)</p>
+      <p>第三个x是text-bottom,假想父元素有一个x在那里，这个x不会受line-height的影响</p>
+      <p>然后这个假想的x底端和text-bottom的底端对齐</p>
+      <p>第四个是替换元素，也设置了text-bottom，不过看起来和第三个x(文本元素)不一样</p>
+      <p>替换元素把它的底部和父元素x的底部对齐</p>
+
+      <p>
+        还发现了一件事，设置为bottom时应该是行内框的底部和行框底部对齐
+        img替换元素设置为bottom的时候确实没有问题
+        不过设置文本元素的时候，会发现只是基于父元素的x的底部对齐，而不是行框盒子底部对齐
+        发现line-height会应用于普通行内元素，在img替换元素上也会生效
+        可能行内替换和非替换元素有着不同的规则
+        行内非替换元素的baseline和bottom会根据struct来计算(有行高的时候，struct内容两边会填充行距)
+        行内替换元素的bottom还是按照正常的行框底部来计算
+      </p>
+
+    </div>
+
+    <h3>vertical-align middle</h3>
+    <div class="tips">
+      <p>把行内元素框的重点与父元素的基线上方0.5x处的点对齐</p>
+      
+    </div>
   </div>
 </body>
 
