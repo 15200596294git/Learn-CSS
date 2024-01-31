@@ -144,23 +144,50 @@
       background-color: aqua;
       line-height: 10;
     }
-    .t-vertical4 .sp1{
+
+    .t-vertical4 .sp1 {
       margin: 0 20px;
       background-color: gold;
       vertical-align: bottom;
     }
-    .t-vertical4 .sp2{
+
+    .t-vertical4 .sp2 {
       vertical-align: text-bottom;
       background-color: gold;
     }
+
     .t-vertical4 .img1 {
       width: 20px;
       height: 20px;
       vertical-align: text-bottom;
     }
 
-   
-    
+    .t-vertical5 {
+      background-color: aquamarine;
+    }
+
+    .t-vertical5 .img1 {
+      vertical-align: middle;
+      width: 100px;
+      height: 100px;
+    }
+
+    .t-vertical6 {
+      background-color: aqua;
+    }
+
+    .t-vertical6 .img1 {
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+    }
+
+    .t-vertical6 .sp1 {
+      display: inline-block;
+      height: 80px;
+      width: 80px;
+      background-color: gold;
+    }
   </style>
 </head>
 
@@ -338,8 +365,36 @@
 
     <h3>vertical-align middle</h3>
     <div class="tips">
-      <p>把行内元素框的重点与父元素的基线上方0.5x处的点对齐</p>
-      
+      <p>把行内元素框的中点与父元素的基线上方0.5x处的点对齐</p>
+    </div>
+
+    <div class="tips">
+      <p>middle, 把元素的中点和父元素的基线上方0.5x出的点对齐</p>
+      <p>此时img元素已经为该行框中最高的元素</p>
+      <p>默认img基于基线对齐，此时文字也基于基线对齐</p>
+      <p>但是当img设置middle时，img需要把自己的中线对齐到父元素基线上方</p>
+      <p>img元素在行框内应该是下移动，但是由于行框是由img撑开的</p>
+      <p>img下移后，原本行框上面部分的区域又会缩减</p>
+      <p>此时就相当于img元素不变，但是基线的位置近似的移动到了上下中心位置</p>
+      <p>其他内联文本也跟着移动了</p>
+    </div>
+    <div class="t-vertical5">
+      x
+      <span>我是文字</span>
+      <img class="img1" src="../imgs/1.png" alt="">
+    </div>
+
+    <h4>img设置middle,但是img不是行框内最高的内联元素</h4>
+    <div class="t-vertical6">
+      x
+      <img src="../imgs/1.png" alt="" class="img1">
+      <span class="sp1"></span>
+    </div>
+    <div class="tips">
+      <p>由于除了img替换元素之外，还有一个元素比img还要高</p>
+      <p>此时img设置了middle，img对齐了,x也跟着上移了</p>
+      <p>但是sp1元素还在，上面的区域没有消失，如果此时去掉sp1</p>
+      <p>就变成了img设置middle将文本居中的效果了</p>
     </div>
   </div>
 </body>
