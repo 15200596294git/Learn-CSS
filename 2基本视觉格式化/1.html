@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基本视觉格式化</title>
+  <style>
+    .block {
+      margin: 20px 0;
+    }
+
+    .tips {
+      font-style: italic;
+      color: #756565;
+    }
+
+    .t-box {
+      width: 200px;
+      background-color: aqua;
+    }
+
+    .t-box p {
+      background-color: gold;
+      margin: 0 20px;
+      padding: 0 20px;
+      border: 20px solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="tips">
+      <p>每个元素都相对于其包含快摆放</p>
+      <p>包含块就是一个元素的 '布局上下文'</p>
+      <p>包含块由最近的块级祖先框、表单元格或行内块组件框的内容边界</p>
+      <p>行内元素的摆放方式，不直接依赖于包含块</p>
+      <p>正常流: 从左到右 从上到下</p>
+      <p>非替换元素: 如果元素的内容包含在文档中，称之为非替换元素</p>
+      <p>替换元素: img就是替换元素，大多数表单元素也可以替换</p>
+      <p>块级元素: display 为block</p>
+      <p>行内元素: display 为inline</p>
+      <p>根元素: 文档树的顶端，就是html</p>
+    </div>
+    <h2>块级元素</h2>
+    <div class="tips">
+      <p>上内边界 指内容区域外面那条线</p>
+      <p>上外边界指 上外边距外面那条线</p>
+    </div>
+    <h3>正常流中，块级元素框的水平部分的总和等于父元素的width</h3>
+    <div class="t-box">
+      <p>我是文字</p>
+    </div>
+
+    <h3>水平格式化</h3>
+    <div class="tips">
+      <p>水平格式化包括 margin-left border-left padding-left width padding-right border-right margin-right 7个属性</p>
+      <p>其中只有三个属性可以设置为auto，那就是width、margin-left margin-right，其他属性必须设置为特定的值</p>
+      <p>182页</p>
+    </div>
+
+  </div>
+</body>
+
+</html>
