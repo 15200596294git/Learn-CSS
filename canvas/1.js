@@ -65,3 +65,11 @@ function drawClock() {
 
 drawClock();
 // loop = setInterval(drawClock, 1000);
+
+/**
+ * 180度 等于 PI弧度
+ * 1弧度 = 180度 / PI
+ * 1度 = PI弧度 / 180 
+ * 
+ * 正弦 sin 余弦 cos 正切 tan
+ * */ 
