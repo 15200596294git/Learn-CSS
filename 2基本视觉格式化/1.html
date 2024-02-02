@@ -129,8 +129,8 @@
       height: 100px;
 
       width: 100px;
-      /* margin-left: -50px; */
-      margin-right: 350px;
+      margin-left: -50px;
+      /* margin-right: 350px; */
     }
 
     .t-box10 {
@@ -244,15 +244,15 @@
       <div class="inner"></div>
     </div>
 
-    <h3>负外边距</h3>
+    <h3>负外边距 width设置为auto</h3>
     <div class="tips">
       <p>不设置border、padding、的情况下</p>
       <p>margin-left + width + margin-right的值等于父元素的宽度</p>
-      <p>这三个值又能设置为auto自动计算，margin有能设置为负值</p>
+      <p>这三个值又能设置为auto自动计算，margin又能设置为负值</p>
       <p>那我们给其中一个margin负值，那是不是width的auto值会越来越大呢,甚至超出父元素设置的width</p>
     </div>
     <div class="t-box7">
-      <div class="inner"></div>
+      <div class="inner">inner</div>
     </div>
     <div class="tips">
       <p>可以看到inner元素的width等于400，并且它还带了100的左那边距</p>
@@ -292,10 +292,10 @@
       <p>左边元素设置margin-left正数，ab元素都会往右移动</p>
       <p>左边元素设置margin-left负数,ab元素往右移动</p>
       <p>左边元素设置margin-right正数，b元素右移动，a不变</p>
-      <p>左边元素设置margin-right负数，a不变，b右移</p>
+      <p>左边元素设置margin-right负数，b左移,a不变</p>
 
       <p>正常流中，从左到右，从上到下</p>
-      <p>margin-left会影响自己本身元素的位置，从影响后面元素的位置</p>
+      <p>margin-left会影响自己本身元素的位置，从而影响后面元素的位置</p>
       <p>margin-right 因为是从左到右，margin-right可以理解为不会改变自身元素的位置</p>
       <p>但是对于下一个元素来说，这个margin-right相当于设置了下一个元素的margin-left</p>
       <p>a的margin-right，相当于b的margin-left</p>
@@ -307,7 +307,6 @@
       <div class="inner1"></div>
       <div class="inner2"></div>
     </div>
-    <p>187</p>
   </div>
 </body>
 
