@@ -99,7 +99,8 @@
       width: 400px;
       background-color: #ddd;
     }
-    .t-box7 .inner{
+
+    .t-box7 .inner {
       height: 100px;
       background-color: aqua;
 
@@ -111,7 +112,8 @@
       width: 400px;
       background-color: #ddd;
     }
-    .t-box8 .inner{
+
+    .t-box8 .inner {
       background-color: aqua;
       height: 100px;
       width: 500px;
@@ -124,7 +126,8 @@
       background-color: #ddd;
       width: 400px;
     }
-    .t-box9 .inner{
+
+    .t-box9 .inner {
       background-color: aqua;
       height: 100px;
 
@@ -139,13 +142,15 @@
       background: #ddd;
       padding-left: 100px;
     }
-    .t-box10 .inner1{
+
+    .t-box10 .inner1 {
       display: inline-block;
       width: 100px;
       background-color: aqua;
       height: 100px;
     }
-    .t-box10 .inner2{
+
+    .t-box10 .inner2 {
       display: inline-block;
       width: 100px;
       background-color: gold;
@@ -157,17 +162,112 @@
       background: #ddd;
       padding-left: 100px;
     }
-    .t-box11 .inner1{
+
+    .t-box11 .inner1 {
 
       width: 100px;
       background-color: aqua;
       height: 100px;
     }
-    .t-box11 .inner2{
+
+    .t-box11 .inner2 {
       width: 100px;
       background-color: gold;
       height: 100px;
     }
+
+    .t-img {
+      width: 100px;
+    }
+
+    .t-img2 {
+      height: 100px;
+    }
+
+    .t-img3 {
+      width: 100px;
+      height: 100px;
+    }
+
+    .box-v {
+      /* height: 200px; */
+      background-color: #ddd;
+    }
+    .box-v .inner{
+      height: 200px;
+      padding: 10px 0 ;
+      margin: 10px 0;
+      background-color: gold;
+    }
+
+    .box-v2 {
+      height: 200px;
+      background-color: #ddd;
+    }
+    .box-v2 .inner{
+      height: 50%;
+      background-color: gold;
+    }
+    .box-v3 {
+      background-color: #ddd;
+    }
+    .box-v3 .inner {
+      background-color: gold;
+      height: 200px;
+      margin: 20px;
+    }
+
+    .box-v4 {
+      background-color: #ddd;
+      padding: 10px;
+      /* border: solid 10px; */
+    }
+    .box-v4 .inner {
+      background-color: gold;
+      height: 200px;
+      margin: 20px;
+    }
+
+    .box-v5 {
+      background-color: #ddd;
+    }
+    .box-v5 .inner {
+      background-color: gold;
+      display: inline-block;
+      height: 200px;
+      margin: 20px;
+    }
+
+
+    .box-v6 {
+      background-color: #ddd;
+    }
+    .box-v6 .inner1{
+      height: 100px;
+      background-color: gold;
+      margin: 20px;
+    }
+    .box-v6 .inner2{
+      height: 100px;
+      background-color: aqua;
+      margin: 20px;
+    }
+
+    .box-v7 {
+      background-color: aqua;
+      margin-bottom: 25px;
+    }
+    .box-v7 .inner{
+      height: 200px;
+      background-color: gold;
+      margin-bottom: 35px;
+    }
+    .box-v8 {
+      background-color: purple;
+      height: 200px;
+    }
+
+
   </style>
 </head>
 
@@ -203,7 +303,7 @@
     <h3>使用auto</h3>
     <div class="tips">
       <p>由于只有margin-left、width、margin-right可以设置为auto</p>
-      <p>那么当其中两个值设置为具体值，而另外一个值设置为auto事，设置为auto的那个值会自动计算</p>
+      <p>那么当其中两个值设置为具体值，而另外一个值设置为auto时，设置为auto的那个值会自动计算</p>
     </div>
     <div class="tips">
       <p>父元素width设置为400px</p>
@@ -307,6 +407,89 @@
       <div class="inner1"></div>
       <div class="inner2"></div>
     </div>
+  </div>
+
+  <div class="block">
+    <h2>替换元素</h2>
+    <div class="tips">
+      <p>非替换块级元素的所有规则同样适用于替换块元素</p>
+      <p>只有一个例外，那就是width为auto，元素的宽度则是内容的固有宽度</p>
+    </div>
+    <h3>img width: auto,height:auto</h3>
+    <div class="tips">
+      <p>没有为img设置width属性，width默认值就是auto，就是图片的宽度(和高度)</p>
+    </div>
+    <img src="../imgs/1.png" alt="">
+
+    <h3>img width: 100px,height:auto</h3>
+    <div class="tips">
+      <p>如果width设置的宽度和图片原有宽度不一致，height:auto会自动按照比例缩放</p>
+    </div>
+    <img class="t-img" src="../imgs/1.png" alt="">
+
+    <h3>img width: auto,height:100px</h3>
+    <div class="tips">
+      <p>反之如果height设置的值和图片原有值不一样，width:auto会按照比例变化</p>
+    </div>
+    <img src="../imgs/1.png" class="t-img2" alt="">
+
+    <h3>同时设置width和height，按照width和height指定值</h3>
+    <img src="../imgs/1.png" class="t-img3" alt="">
+  </div>
+
+  <div class="block">
+    <h2>垂直格式化</h2>
+    <h3>子元素设置的height、margin、border、padding加起来等于包含块的height</h3>
+    <p>不过需要排除下面子元素外边距超出包含块的情况</p>
+    <div class="box-v">
+      <div class="inner">1</div>
+    </div>
+    <h3>height设置为百分数，百分数是相对于其包含块的。</h3>
+    <div class="box-v2">
+      <p class="inner">text</p>
+    </div>
+    <h3>子元素外边距超出包含块</h3>
+    <div class="tips" style="white-space: pre-line;">
+      1.一个块级正常流元素，其包含块如果没有设置padding或者border，那么margin将会超出包含块
+      2.一个块级正常流元素，其包含块入锅设置了padding或者border，那么margin将不会超出包含块
+      3.内联级元素的margin不会超过包含块
+    </div>
+    <h4>超出</h4>
+    <div class="box-v3">
+      <div class="inner"></div>
+    </div>
+
+    <h4>未超出</h4>
+    <div class="box-v4">
+      <div class="inner">我是文字</div>
+    </div>
+
+    <h4>未超出</h4>
+    <div class="box-v5">
+      <span class="inner">我是文字</span>
+    </div>
+
+    <h3>垂直外边距的合并</h3>
+    <div class="tips">
+      <p>同级元素不同方向的marign合并</p>
+      <p>这个例子是上一个元素的margin-bottom和下面元素的margin-top</p>
+    </div>
+    <div class="box-v6">
+      <div class="inner1"></div>
+      <div class="inner2"></div>
+    </div>
+    
+    <h3>子级元素和父级元素的margin合并</h3>
+    <div class="tips">
+      <p>父元素设置了margin-bottom为25</p>
+      <p>子元素设置了margin-bottom为35</p>
+      <p>最终合并成了35</p>
+    </div>
+    <div class="box-v7">
+      <div class="inner"></div>
+    </div>
+    <div class="box-v8"></div>
+
   </div>
 </body>
 
