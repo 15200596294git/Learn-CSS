@@ -15,6 +15,10 @@
       color: #756565;
     }
 
+    .pre-line {
+      white-space: pre-line;
+    }
+
     .t-box {
       width: 200px;
       background-color: aqua;
@@ -267,6 +271,38 @@
       height: 200px;
     }
 
+    .box-v9 {
+      margin: 20px 0;
+    }
+    .box-v9 .inner1 {
+      height: 100px;
+      background-color: #ddd;
+      margin-bottom: -10px;
+    }
+    .box-v9 .inner2 {
+      height: 100px;
+      background-color: aqua;
+      margin-top: -20px;
+    }
+
+    .box-v10 {
+      margin: 20px 0;
+    }
+    .box-v10 .inner1{
+      height: 100px;
+      background-color: #ddd;
+      margin-bottom: 10px;
+    }
+    .box-v10 .inner2{
+      height: 100px;
+      background-color: aqua;
+      margin-top: -20px;
+    }
+
+    .t-inline1 {
+      line-height: 40px;
+      
+    }
 
   </style>
 </head>
@@ -489,6 +525,46 @@
       <div class="inner"></div>
     </div>
     <div class="box-v8"></div>
+
+    <h3>负外边距</h3>
+    <div class="tips">
+      <p>两个负外边距合并，以绝对值大的那个为准</p>
+    </div>
+    <div class="box-v9">
+      <div class="inner1"></div>
+      <div class="inner2"></div>
+    </div>
+
+    <div class="tips">
+      <p>正负外边距合并，正数减去负数的绝对值</p>
+    </div>
+    <div class="box-v10">
+      <div class="inner1"></div>
+      <div class="inner2"></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>行内布局</h2>
+    <div class="tips">
+      <p>匿名文本: 未包含在行内元素中的字符串</p>
+      <p>em框: 字符框，font-size决定了各个em框的高度</p>
+      <p class="pre-line">内容区: 内容区就是元素个字符的em框串在一起的框
+        在替换元素中内容区就是元素的固有高度再加上外边距、边框、内边距
+      </p>
+      <p>行间距: font-size和line-height值只差 行间距只应用于非替换元素。</p>
+      <p class="pre-line"> 行内框：对于非替换元素，元素行内框的高度刚好等于line-height的值
+        对于替换元素，元素行内框的高度则恰好等于内容区的高度，因为行间距应用不到替换元素
+      </p>
+      <p>行框: 由行内框组成，最高行内框的上边界到最低行内框的下边界</p>
+    </div>
+
+    <div class="t-inline1">
+      <!-- 1 -->
+      <span></span>
+    </div>
+
+
 
   </div>
 </body>
