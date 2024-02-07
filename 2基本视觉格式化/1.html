@@ -300,9 +300,29 @@
     }
 
     .t-inline1 {
-      line-height: 40px;
-      
+      /* line-height: 40px; */
+      font-size: 0;
     }
+    .t-inline1 .inner {
+      font-size: 24px;
+      line-height: 12px;
+    }
+    .t-inline2 {
+      font-size: 0;
+    }
+    .t-inline2 .inner{
+      font-size: 24px;
+      line-height: 1em;
+    }
+    .t-inline3 {
+      width: 200px;
+    }
+    .t-inline3 .inner {
+      border: 2px solid;
+      padding: 20px;
+      margin: 20px;
+    }
+
 
   </style>
 </head>
@@ -549,7 +569,8 @@
     <div class="tips">
       <p>匿名文本: 未包含在行内元素中的字符串</p>
       <p>em框: 字符框，font-size决定了各个em框的高度</p>
-      <p class="pre-line">内容区: 内容区就是元素个字符的em框串在一起的框
+      <p class="pre-line">内容区: 内容区就是元素个字符的em框串在一起的框。
+        也可以是由字符字形描述的框。
         在替换元素中内容区就是元素的固有高度再加上外边距、边框、内边距
       </p>
       <p>行间距: font-size和line-height值只差 行间距只应用于非替换元素。</p>
@@ -559,12 +580,53 @@
       <p>行框: 由行内框组成，最高行内框的上边界到最低行内框的下边界</p>
     </div>
 
+    <p>span元素所占的内容区是比较高的，但是div元素的高度是比span元素要低</p>
+    <p>因为line-height决定了行内框，而行内框又决定了行框</p>
+    <p>并且line-height比font-size小时，行内框也会变小，行框也会对应变小</p>
     <div class="t-inline1">
-      <!-- 1 -->
-      <span></span>
+      <span class="inner">我是文本</span>
     </div>
 
+    <div class="tips">
+      <p>使用line-height: 1em;或者line-height: 1; 可以将行内框设置和内容区的高度一样</p>
+      <p>
+        解决了之前做项目时，设计稿的文字总是会没有考虑到line-height
+        比如一般设置了font-size为24px，行内框一般都会超过24px
+        但是使用了line-height: 1em;之后，行内框的高度会等于内容区的高度
+        这样就可以在设计稿上更好的计算line-height了
+      </p>
+    </div>
+    <div class="t-inline2">
+      <span class="inner">我是文本</span>
+    </div>
 
+    <div>行内元素设置 border</div>
+    <div class="tips">
+      <p>我们行内元素的文字进行换行了</p>
+      <p>border-left和border-right分别在第一行和最后一行</p>
+      <p>border-top和border-bottom在每一行都有</p>
+      <p>margin、border、padding不会影响行框的高度，它们只会影响内容区的高度</p>
+      <p>行内元素的边框边界是由font-size决定，而不是line-height决定</p>
+      <p>行内框的padding会改变border框的位置，并且padding是在整个元素的上下左右</p>
+    </div>
+    <div class="t-inline3">
+      <span class="inner">
+        我是文本我是文本我是文本我是文本我是文本
+        我是文本我是文本我是文本我是文本我是文本
+        我是文本我是文本我是文本我是文本我是文本
+      </span>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>display</h2>
+    <div class="tips">
+      <p>值: none | inline | block | inline-block |</p>
+      <p>初始值: inline</p>
+      <p>应用于: 所有元素</p>
+      <p>继承性: 无</p>
+      <p>计算值</p>
+    </div>
 
   </div>
 </body>
