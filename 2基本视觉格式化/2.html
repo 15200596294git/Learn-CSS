@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内边距、边框和外边距</title>
+  <style>
+    .block {
+      margin: 20px 0;
+    }
+    .tips {
+      font-style: italic;
+      color: #756565;
+    }
+    .t-border {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      border: 2px dashed;
+      padding: 10px;
+    }
+    .t-border2 {
+      width: 200px;
+      height: 200px;
+      background-color: silver;
+      border-width: 10px;
+      border-style: solid double dashed dotted;
+    }
+    .t-border3 {
+      width: 200px;
+      height: 200px;
+      background: silver;
+      border-width: 10px;
+      border-top-style: solid;
+      border-right-style: double;
+      border-bottom-style: dashed;
+      border-left-style: dotted;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="block">
+    <h2>width</h2>
+    <p>值： <length> | <percentage> | auto </p>
+    <p>初始值: auto</p>
+    <p>应用于: 块级元素和替换元素</p>
+    <p>继承性: 无</p>
+    <p>百分数: 相对于包含块的width</p>
+  </div>
+
+  <div class="block">
+    <h2>height</h2>
+    <p>值: <length> | auto </p>
+    <p>初始值: auto</p>
+    <p>应用于: 块级元素和替换元素</p>
+    <p>继承性: 无</p>
+    <p>百分数: 相对于包含块的height计算</p>
+  </div>
+
+  <div class="block">
+    <h2>margin</h2>
+    <p>值: [<length> | <percentage> | auto]{1,4} | inherit</p>
+    <p>初始值: 未定义</p>
+    <p>应用于: 所有元素</p>
+    <p>继承性: 无</p>
+    <p>百分数: 相对于包含块的width</p>
+  </div>
+
+  <div class="block">
+    <h2>border</h2>
+    <h3>border-style</h3>
+    <p>值： [none | dotted | dashed | solid | double | inset | outset]{1,4}</p>
+    <p>未定义</p>
+    <p>应用于: 所有元素</p>
+    <p>继承性: 无</p>
+
+    <div class="tips">
+      <p>元素的背景延伸到了边框，而不是内边距</p>
+      <p>设置了背景色，padding和border</p>
+      <p>其中border的style设置成了dashed,可以看到虚线之间是我们设置的背景色</p>
+      <p>那么就说明background其实是延伸到了边框上</p>
+    </div>
+    <div class="t-border"></div>
+
+    <h4>定义多种边框样式</h4>
+    <div class="t-border2"></div>
+  </div>
+  <h4>单边样式设置，border-top-style、border-right-style...</h4>
+  <div class="t-border3">
+
+  </div>
+
+</body>
+
+</html>
