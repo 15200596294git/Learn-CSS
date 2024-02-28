@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>过渡和动画</title>
+  <style>
+    .block {
+      margin: 20px;
+    }
+
+    .trans1 {
+      background: white;
+      transition: background .5s linear;
+    }
+    .trans1:hover {
+      background: green;
+    }
+
+    .align-center {
+      text-align: center;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .trans2 {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: aqua;
+      transform: rotateZ(45deg);
+      transition: all .4s ease-in;
+      /* transition-timing-function: cubic-bezier(.77,-0.7,.24,1.64); */
+      /* 匀速 */
+      /* transition-timing-function: linear; */
+      /* 先慢后快，比如球从高处落下 */
+      /* transition-timing-function: ease-in; */
+      /* 先快后慢 */
+      /* transition-timing-function: ease-out; */
+      /* 前后慢，中间快 */
+      /* transition-timing-function: ease-in-out; */
+      /* transition-timing-function: cubic-bezier(.88,-0.66,.03,1.66); */
+      transition-timing-function: steps(4);
+
+      
+    }
+    .trans2:hover {
+      transform: scale(2);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="block">
+    <button class="trans1">按钮</button>
+  </div>
+  <div class="block align-center">
+    <div class="trans2"></div>
+  </div>
+</body>
+</html>
