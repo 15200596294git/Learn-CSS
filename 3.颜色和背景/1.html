@@ -54,6 +54,19 @@
         float: right;
         /* margin-top: 44px; */
       }
+
+      .attach1 {
+        width: 200px;
+        height: 200px;
+        background: url(../imgs/1.png) no-repeat center;
+        background-attachment: fixed;
+        /* background-color: aqua; */
+      }
+      /* body {
+        background: url(../imgs/1.png) no-repeat center;
+        background-attachment: fixed;
+        background-color: aqua;
+      } */
   </style>
 </head>
 
@@ -109,6 +122,26 @@
     <div class="pos1">
 
     </div>
+  </div>
+
+  <div class="block">
+    <h2>background-attachment</h2>
+    <p>值: scroll | fixed | innherit</p>
+    <p>初始值: scroll</p>
+    <p>应用于: 所有元素</p>
+    <p>继承性: 无</p>
+    <p>计算值: 根据指定确定</p>
+
+    <!-- 
+      background-attachment: fixed;
+      相当于给body设置了background-attachment: fixed;
+      可以理解为设置了一个背景，这个背景不随滚动条滚动，默认不展示
+      而attachment相当于开了一个视口，通过这个视口才可以看到背景
+     -->
+    <div class="attach1">
+      
+    </div>
+
   </div>
 
 
