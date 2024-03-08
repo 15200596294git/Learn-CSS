@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,29 +18,196 @@
     .float1 {
       width: 200px;
     }
+
     .float1 .img {
       width: 100px;
       height: 100px;
       float: left;
     }
+
+    .float2 {
+      clear: both;
+      height: 200px;
+    }
+
+    .float2 .div {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background: aqua;
+    }
+
+    .float3 {
+      clear: both;
+      height: 100px;
+    }
+
+    .float3 .sp {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: aquamarine;
+    }
+
+    .float4 {
+      width: 400px;
+      height: 400px;
+      margin: 10px;
+      padding: 10px;
+      border: solid 10px;
+      background: red;
+    }
+
+    .float4 .div {
+      float: left;
+      height: 200px;
+      width: 200px;
+      background: chartreuse;
+      padding: 10px;
+      margin: 10px;
+      border: solid 10px;
+    }
+
+    .float5 {
+      width: 400px;
+      height: 200px;
+      background: silver;
+    }
+    .float5 .div1 {
+      float: left;
+      width: 202px;
+      height: 100px;
+      background: purple;
+    }
+    .float5 .div2 {
+      float: left;
+      width: 200px;
+      height: 100px;
+      background: orange;
+    }
+    .float6 {
+      width: 500px;
+      height: 400px;
+      background: silver;
+    }
+    .float6 .div1{
+      float: left;
+      width: 300px;
+      height: 100px;
+      background: purple;
+    }
+    .float6 .div2{
+      float: right;
+      width: 300px;
+      height: 100px;
+      background: orange;
+    }
+
+    .float7 {}
+    .float7 .p1, .float7 .p2, .float7 .p3 {
+      /* display: inline-block; */
+    }
+    .float7 .p1{
+
+    }
+    .float7 .p2{
+
+      width: 200px;
+      float: left;
+    }
+    .float7 .p3{
+
+    }
+
+    .float8 {
+      clear: both;
+    }
+    .float8 .con{
+      padding: 10px;
+      margin: 10px;
+      background: aqua;
+      float: left;
+    }
+    .float8 .child{
+      float: left;
+      height: 200px;
+      width: 200px;
+      background: orange;
+    }
   </style>
 </head>
+
 <body>
   <div class="block">
-      <h2>float</h2>
-      <p>值: left | right | none | inherit</p>
-      <p>初始值: none</p>
-      <p>应用于: 所有元素</p>
-      <p>继承性: 无</p>
-      <p>计算值: 根据指定确定</p>
+    <h2>float</h2>
+    <p>值: left | right | none | inherit</p>
+    <p>初始值: none</p>
+    <p>应用于: 所有元素</p>
+    <p>继承性: 无</p>
+    <p>计算值: 根据指定确定</p>
 
-      <div class="float1">
-        我是文字我是文字
-        <img src="../imgs/1.png" alt="" class="img">
-        我是文字我是文字我是文字
-        我是文字我是文字我是文字我是文字我是文字
-        我是文字我是文字我是文字我是文字我是文字
+    <div class="float1">
+      我是文字我是文字
+      <img src="../imgs/1.png" alt="" class="img">
+      我是文字我是文字我是文字
+      我是文字我是文字我是文字我是文字我是文字
+      我是文字我是文字我是文字我是文字我是文字
+    </div>
+
+    <!-- 浮动非替换元素，最好设置宽度 -->
+    <p class="tips">浮动非替换元素，最好设置宽度</p>
+    <div class="float2">
+      <div class="div"></div>
+    </div>
+    <!-- 浮动元素生成块级框 -->
+    <p class="tips">浮动元素生成块级框</p>
+    <div class="float3">
+      <span class="sp"></span>
+    </div>
+    <div class="tips">
+      <p class="tips">
+        浮动元素的左(或右)外边界不能超出其包含块的左(或右)内边界。（内边界指的是content内容区域）
+      </p>
+    </div>
+    <div class="float4">
+      <div class="div"></div>
+    </div>
+
+    <div class="tips">
+      <p>如果已经有一个元素向左浮动，第二个元素左浮动时只能在上一个浮动元素的右外边界，或者在第一个浮动元素的底端（一行放不下时）</p>
+    </div>
+    <div class="float5">
+      <div class="div1"></div>
+      <div class="div2"></div>
+    </div>
+
+    <div class="tips">
+      <p>包含块的宽度为500，此时一个子元素左浮宽度为300px，另一个元素右浮宽度300px</p>
+      <p>此时宽度不够，但是两个元素不会重叠，而是第二个浮动的元素在第一个元素之下</p>
+    </div>
+    <div class="float6">
+      <div class="div1"></div>
+      <div class="div2"></div>
+    </div>
+
+    <div class="tips">
+      比如三个块级元素，中间第二行的块级元素浮动时不会浮动到第一个元素之上
+    </div>
+    <div class="float7">
+      <p class="p1">第一行</p>
+      <p class="p2">第二行</p>
+      <p class="p3">第三行</p>
+    </div>
+
+    <div class="tips">
+      <p>将父元素设置为浮动元素可以将浮动元素包含在父元素之内</p>
+    </div>
+    <div class="float8">
+      <div class="con">
+        <div class="child"></div>
       </div>
+    </div>
   </div>
 </body>
+
 </html>
